@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Basic To-Do List</title>
+</head>
+<body>
+<h1>Basic To-Do List</h1>
+<ul id="todoList"></ul>
+<input type="text" id="newItem" placeholder="New Item">
+<button onclick="addItem()">Add Item</button>
+<script>
+var todoItems = [];
+
+function addItem() {
+var newItem = document.getElementById("newItem").value;
+todoItems.push(newItem);
+
+document.getElementById("todoList").innerHTML = todoItems.join(", ");
+}
+
+function markItemAsDone(index) {
+todoItems[index] = "DONE";
+
+document.getElementById("todoList").innerHTML = todoItems.join(", ");
+}
+
+function removeItem(index) {
+todoItems.splice(index, 1);
+
+document.getElementById("todoList").innerHTML = todoItems.join(", ");
+}
+</script>
+</body>
+</html>
